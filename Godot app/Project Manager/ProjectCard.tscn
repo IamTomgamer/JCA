@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl1hqggp7kh4g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2h1f"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5lpq"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+
+[node name="ProjectCard" type="VBoxContainer"]
+custom_minimum_size = Vector2(386, 500)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2h1f")
+
+[node name="Image" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 356.0
+offset_bottom = 356.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5lpq")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Image"]
+custom_minimum_size = Vector2(326, 326)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 356.0
+offset_right = 386.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 40
+text = "HeyHallo"
+horizontal_alignment = 1
+vertical_alignment = 1

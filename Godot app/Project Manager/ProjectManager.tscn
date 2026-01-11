@@ -1,0 +1,182 @@
+[gd_scene load_steps=11 format=3 uid="uid://yr0es81b0to7"]
+
+[ext_resource type="Theme" uid="uid://beam52wlj5cua" path="res://themes/GB.tres" id="1_birbv"]
+[ext_resource type="Script" uid="uid://dekbi4yg2xja6" path="res://Project Manager/project_manager.gd" id="1_d74ew"]
+[ext_resource type="Texture2D" uid="uid://ci06vvudqpi7d" path="res://Textures/icon-03.png" id="1_umlal"]
+[ext_resource type="Texture2D" uid="uid://drueiietytbph" path="res://Textures/icon-04.png" id="2_qtwqf"]
+[ext_resource type="Texture2D" uid="uid://rvx750wh6wfx" path="res://Textures/icon-02.png" id="3_birbv"]
+[ext_resource type="PackedScene" uid="uid://dl1hqggp7kh4g" path="res://Project Manager/ProjectCard.tscn" id="3_d74ew"]
+[ext_resource type="Texture2D" uid="uid://1kyilmw87l8v" path="res://Textures/icon-01.png" id="4_qtwqf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vojdy"]
+bg_color = Color(0.99999315, 0.3902754, 0.56675214, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umlal"]
+bg_color = Color(1, 0.9882353, 0.972549, 1)
+
+[sub_resource type="Theme" id="Theme_qtwqf"]
+Panel/styles/panel = SubResource("StyleBoxFlat_umlal")
+
+[node name="ProjectManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d74ew")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 2550.0
+offset_bottom = 1430.0
+theme = ExtResource("1_birbv")
+
+[node name="Work" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 150.0
+offset_right = 2540.0
+offset_bottom = 1420.0
+theme = ExtResource("1_birbv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_vojdy")
+
+[node name="Workspace" type="HBoxContainer" parent="Work"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 2380.0
+offset_bottom = 1260.0
+theme_override_constants/separation = 5
+
+[node name="Content" type="VBoxContainer" parent="Work/Workspace"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Work/Workspace/Content"]
+custom_minimum_size = Vector2(0, 1260)
+layout_mode = 2
+scroll_horizontal_custom_step = 0.1
+scroll_vertical_custom_step = 0.1
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="Work/Workspace/Content/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="ProjectCard" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard2" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard3" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard4" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard5" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard6" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard7" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard8" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard9" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard10" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard11" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard12" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard13" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard14" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard15" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard16" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard17" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard18" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard19" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard20" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="ProjectCard21" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
+layout_mode = 2
+
+[node name="SideBar" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 150.0
+offset_right = 135.0
+offset_bottom = 884.0
+
+[node name="Dashboard" type="TextureButton" parent="SideBar"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+texture_normal = ExtResource("1_umlal")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Projects" type="TextureButton" parent="SideBar"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+texture_normal = ExtResource("2_qtwqf")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Chat" type="TextureButton" parent="SideBar"]
+custom_minimum_size = Vector2(100, 170)
+layout_mode = 2
+texture_normal = ExtResource("3_birbv")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="SideBar"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme = SubResource("Theme_qtwqf")
+
+[node name="Settings" type="TextureButton" parent="SideBar"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+size_flags_vertical = 10
+texture_normal = ExtResource("4_qtwqf")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="SideBar/Dashboard" to="." method="_on_dashboard_pressed"]
+[connection signal="pressed" from="SideBar/Projects" to="." method="_on_projects_pressed"]
