@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp3mecvb4wr8b"]
+[gd_scene load_steps=19 format=3 uid="uid://bp3mecvb4wr8b"]
 
 [ext_resource type="Script" uid="uid://dobpp8thtb1kr" path="res://Dashboard/dashboard.gd" id="1_5txqv"]
 [ext_resource type="Theme" uid="uid://beam52wlj5cua" path="res://themes/GB.tres" id="2_gnslv"]
 [ext_resource type="Texture2D" uid="uid://ci06vvudqpi7d" path="res://Textures/icon-03.png" id="3_g1sq0"]
+[ext_resource type="Theme" uid="uid://d4apfhir6lhp4" path="res://themes/Dashboard Projects.tres" id="3_g7hxu"]
+[ext_resource type="Theme" uid="uid://bm1w506jq2l3m" path="res://themes/Dashboard Project-filters.tres" id="4_nu5ya"]
 [ext_resource type="Texture2D" uid="uid://drueiietytbph" path="res://Textures/icon-04.png" id="4_ttji4"]
 [ext_resource type="Texture2D" uid="uid://rvx750wh6wfx" path="res://Textures/icon-02.png" id="5_215cw"]
 [ext_resource type="Texture2D" uid="uid://1kyilmw87l8v" path="res://Textures/icon-01.png" id="6_usm46"]
@@ -14,12 +16,30 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5txqv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nu5ya"]
 bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
 corner_radius_top_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2ei7"]
+bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76e0c"]
+bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
 corner_radius_top_right = 30
-corner_radius_bottom_right = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkdxq"]
+bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5txqv"]
+bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfumx"]
+bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgh6l"]
+bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+corner_radius_bottom_right = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umlal"]
 bg_color = Color(1, 0.9882353, 0.972549, 1)
@@ -35,6 +55,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5txqv")
+metadata/_edit_vertical_guides_ = [-494.0]
 
 [node name="BG" type="Panel" parent="."]
 layout_mode = 0
@@ -73,22 +94,163 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="News" type="Panel" parent="Dashboard/Dash/Content/Top"]
+[node name="Projects" type="Panel" parent="Dashboard/Dash/Content/Top"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_5txqv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nu5ya")
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/News"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Dashboard/Dash/Content/Top/Projects"]
+custom_minimum_size = Vector2(763, 410)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 80
-text = "News"
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 773.0
+offset_bottom = 820.0
+
+[node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Your Projects"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sorting" type="VBoxContainer" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="A-Z" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
+layout_mode = 2
+theme = ExtResource("4_nu5ya")
+text = "A-Z"
+
+[node name="Z-A" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
+layout_mode = 2
+theme = ExtResource("4_nu5ya")
+text = "Z-A"
+
+[node name="Latest" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
+layout_mode = 2
+theme = ExtResource("4_nu5ya")
+text = "Latest"
+
+[node name="Projects" type="ScrollContainer" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 715)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="Projects" type="VBoxContainer" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button2" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button3" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button4" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button5" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button6" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button7" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button8" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button9" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button10" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button11" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button12" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button13" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button14" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button15" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button16" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button17" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button18" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button19" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
+
+[node name="Button20" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+layout_mode = 2
+theme = ExtResource("3_g7hxu")
+text = "ProjectName"
 
 [node name="ContinueWhereYouLeftOff" type="Panel" parent="Dashboard/Dash/Content/Top"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_5txqv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_g2ei7")
 
 [node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/ContinueWhereYouLeftOff"]
 layout_mode = 0
@@ -105,7 +267,7 @@ theme_override_constants/separation = 10
 [node name="Notifs" type="Panel" parent="Dashboard/Dash/Content/Top/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_5txqv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_76e0c")
 
 [node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/VBoxContainer/Notifs"]
 layout_mode = 0
@@ -117,7 +279,7 @@ text = "Notifications"
 [node name="Chat Notifs" type="Panel" parent="Dashboard/Dash/Content/Top/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_5txqv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hkdxq")
 
 [node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/VBoxContainer/Chat Notifs"]
 layout_mode = 0
@@ -131,22 +293,22 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Projects" type="Panel" parent="Dashboard/Dash/Content/Bottom"]
+[node name="News" type="Panel" parent="Dashboard/Dash/Content/Bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_5txqv")
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Bottom/Projects"]
+[node name="Label" type="Label" parent="Dashboard/Dash/Content/Bottom/News"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 80
-text = "Your Projects"
+text = "News"
 
 [node name="Popular" type="Panel" parent="Dashboard/Dash/Content/Bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_5txqv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_yfumx")
 
 [node name="Label" type="Label" parent="Dashboard/Dash/Content/Bottom/Popular"]
 layout_mode = 0
@@ -158,7 +320,7 @@ text = "Popular Projects"
 [node name="Inspiration" type="Panel" parent="Dashboard/Dash/Content/Bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_5txqv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xgh6l")
 
 [node name="Label" type="Label" parent="Dashboard/Dash/Content/Bottom/Inspiration"]
 layout_mode = 0
@@ -170,9 +332,9 @@ text = "Inspiration"
 [node name="SideBar" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 25.0
-offset_top = 150.0
+offset_top = 168.0
 offset_right = 135.0
-offset_bottom = 884.0
+offset_bottom = 902.0
 
 [node name="Dashboard" type="TextureButton" parent="SideBar"]
 custom_minimum_size = Vector2(0, 170)
