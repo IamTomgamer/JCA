@@ -4,7 +4,7 @@
 bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5lpq"]
-bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+bg_color = Color(0.17641926, 0.17641905, 0.17641908, 1)
 
 [node name="ProjectCard" type="VBoxContainer"]
 custom_minimum_size = Vector2(386, 500)

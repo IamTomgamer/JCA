@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bp3mecvb4wr8b"]
+[gd_scene load_steps=18 format=3 uid="uid://bp3mecvb4wr8b"]
 
 [ext_resource type="Script" uid="uid://dobpp8thtb1kr" path="res://Dashboard/dashboard.gd" id="1_5txqv"]
 [ext_resource type="Theme" uid="uid://beam52wlj5cua" path="res://themes/GB.tres" id="2_gnslv"]
@@ -9,36 +9,29 @@
 [ext_resource type="Texture2D" uid="uid://rvx750wh6wfx" path="res://Textures/icon-02.png" id="5_215cw"]
 [ext_resource type="Texture2D" uid="uid://1kyilmw87l8v" path="res://Textures/icon-01.png" id="6_usm46"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vojdy"]
-bg_color = Color(0.99999315, 0.3902754, 0.56675214, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nu5ya"]
-bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
 corner_radius_top_left = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2ei7"]
-bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76e0c"]
-bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
 corner_radius_top_right = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkdxq"]
-bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5txqv"]
-bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
 corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfumx"]
-bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgh6l"]
-bg_color = Color(0.6224832, 0.47208077, 0.7335212, 1)
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
 corner_radius_bottom_right = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umlal"]
@@ -65,41 +58,32 @@ offset_right = 2550.0
 offset_bottom = 1430.0
 theme = ExtResource("2_gnslv")
 
-[node name="Dashboard" type="Panel" parent="."]
+[node name="Dash" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 150.0
 offset_top = 150.0
 offset_right = 2540.0
 offset_bottom = 1420.0
-theme = ExtResource("2_gnslv")
-theme_override_styles/panel = SubResource("StyleBoxFlat_vojdy")
-
-[node name="Dash" type="HBoxContainer" parent="Dashboard"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 2380.0
-offset_bottom = 1260.0
 theme_override_constants/separation = 5
 
-[node name="Content" type="VBoxContainer" parent="Dashboard/Dash"]
+[node name="Content" type="VBoxContainer" parent="Dash"]
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="Top" type="HBoxContainer" parent="Dashboard/Dash/Content"]
+[node name="Top" type="HBoxContainer" parent="Dash/Content"]
 custom_minimum_size = Vector2(0, 830)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Projects" type="Panel" parent="Dashboard/Dash/Content/Top"]
+[node name="Projects" type="Panel" parent="Dash/Content/Top"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_nu5ya")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Dashboard/Dash/Content/Top/Projects"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Dash/Content/Top/Projects"]
 custom_minimum_size = Vector2(763, 410)
 layout_mode = 0
 offset_left = 10.0
@@ -107,227 +91,233 @@ offset_top = 10.0
 offset_right = 773.0
 offset_bottom = 820.0
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer"]
+[node name="Label" type="Label" parent="Dash/Content/Top/Projects/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Your Projects"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Dash/Content/Top/Projects/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Sorting" type="VBoxContainer" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer"]
+[node name="Sorting" type="VBoxContainer" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="A-Z" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
+[node name="A-Z" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
 layout_mode = 2
 theme = ExtResource("4_nu5ya")
 text = "A-Z"
 
-[node name="Z-A" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
+[node name="Z-A" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
 layout_mode = 2
 theme = ExtResource("4_nu5ya")
 text = "Z-A"
 
-[node name="Latest" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
+[node name="Latest" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Sorting"]
 layout_mode = 2
 theme = ExtResource("4_nu5ya")
 text = "Latest"
 
-[node name="Projects" type="ScrollContainer" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer"]
+[node name="Projects" type="ScrollContainer" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 715)
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
-[node name="Projects" type="VBoxContainer" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects"]
+[node name="Projects" type="VBoxContainer" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button2" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button2" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button3" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button3" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button4" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button4" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button5" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button5" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button6" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button6" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button7" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button7" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button8" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button8" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button9" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button9" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button10" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button10" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button11" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button11" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button12" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button12" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button13" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button13" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button14" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button14" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button15" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button15" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button16" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button16" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button17" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button17" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button18" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button18" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button19" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button19" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="Button20" type="Button" parent="Dashboard/Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
+[node name="Button20" type="Button" parent="Dash/Content/Top/Projects/VBoxContainer/HBoxContainer/Projects/Projects"]
 layout_mode = 2
 theme = ExtResource("3_g7hxu")
 text = "ProjectName"
 
-[node name="ContinueWhereYouLeftOff" type="Panel" parent="Dashboard/Dash/Content/Top"]
+[node name="ContinueWhereYouLeftOff" type="Panel" parent="Dash/Content/Top"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_g2ei7")
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/ContinueWhereYouLeftOff"]
+[node name="Label" type="Label" parent="Dash/Content/Top/ContinueWhereYouLeftOff"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 790.0
+offset_bottom = 110.0
 theme_override_font_sizes/font_size = 80
 text = "Continue"
+horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Dashboard/Dash/Content/Top"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Dash/Content/Top"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="Notifs" type="Panel" parent="Dashboard/Dash/Content/Top/VBoxContainer"]
+[node name="Notifs" type="Panel" parent="Dash/Content/Top/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_76e0c")
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/VBoxContainer/Notifs"]
+[node name="Label" type="Label" parent="Dash/Content/Top/VBoxContainer/Notifs"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 790.0
+offset_bottom = 110.0
 theme_override_font_sizes/font_size = 80
 text = "Notifications"
+horizontal_alignment = 1
 
-[node name="Chat Notifs" type="Panel" parent="Dashboard/Dash/Content/Top/VBoxContainer"]
+[node name="Chat Notifs" type="Panel" parent="Dash/Content/Top/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_hkdxq")
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Top/VBoxContainer/Chat Notifs"]
+[node name="Label" type="Label" parent="Dash/Content/Top/VBoxContainer/Chat Notifs"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 790.0
+offset_bottom = 110.0
 theme_override_font_sizes/font_size = 80
 text = "Chat Notifications"
+horizontal_alignment = 1
 
-[node name="Bottom" type="HBoxContainer" parent="Dashboard/Dash/Content"]
+[node name="Bottom" type="HBoxContainer" parent="Dash/Content"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="News" type="Panel" parent="Dashboard/Dash/Content/Bottom"]
+[node name="News" type="Panel" parent="Dash/Content/Bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_5txqv")
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Bottom/News"]
+[node name="Label" type="Label" parent="Dash/Content/Bottom/News"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 790.0
+offset_bottom = 110.0
 theme_override_font_sizes/font_size = 80
 text = "News"
+horizontal_alignment = 1
 
-[node name="Popular" type="Panel" parent="Dashboard/Dash/Content/Bottom"]
+[node name="Popular" type="Panel" parent="Dash/Content/Bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_yfumx")
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Bottom/Popular"]
+[node name="Label" type="Label" parent="Dash/Content/Bottom/Popular"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 790.0
+offset_bottom = 110.0
 theme_override_font_sizes/font_size = 80
 text = "Popular Projects"
+horizontal_alignment = 1
 
-[node name="Inspiration" type="Panel" parent="Dashboard/Dash/Content/Bottom"]
+[node name="Inspiration" type="Panel" parent="Dash/Content/Bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_xgh6l")
 
-[node name="Label" type="Label" parent="Dashboard/Dash/Content/Bottom/Inspiration"]
+[node name="Label" type="Label" parent="Dash/Content/Bottom/Inspiration"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 790.0
+offset_bottom = 110.0
 theme_override_font_sizes/font_size = 80
 text = "Inspiration"
+horizontal_alignment = 1
 
 [node name="SideBar" type="VBoxContainer" parent="."]
 layout_mode = 0
