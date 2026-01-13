@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch7qema2p2mhn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo8tj"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5lpq"]
+bg_color = Color(0.17641926, 0.17641905, 0.17641908, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="ProjectCard" type="VBoxContainer"]
+custom_minimum_size = Vector2(193, 250)
+offset_right = 193.0
+offset_bottom = 250.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vo8tj")
+
+[node name="Image" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 178.0
+offset_bottom = 178.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5lpq")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Image"]
+custom_minimum_size = Vector2(143, 143)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 153.0
+offset_bottom = 153.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 178.0
+offset_right = 193.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 20
+text = "HeyHallo"
+horizontal_alignment = 1
+vertical_alignment = 1

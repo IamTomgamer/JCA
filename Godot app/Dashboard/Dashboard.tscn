@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bp3mecvb4wr8b"]
+[gd_scene load_steps=20 format=3 uid="uid://bp3mecvb4wr8b"]
 
 [ext_resource type="Script" uid="uid://dobpp8thtb1kr" path="res://Dashboard/dashboard.gd" id="1_5txqv"]
 [ext_resource type="Theme" uid="uid://beam52wlj5cua" path="res://themes/GB.tres" id="2_gnslv"]
@@ -6,7 +6,9 @@
 [ext_resource type="Theme" uid="uid://d4apfhir6lhp4" path="res://themes/Dashboard Projects.tres" id="3_g7hxu"]
 [ext_resource type="Theme" uid="uid://bm1w506jq2l3m" path="res://themes/Dashboard Project-filters.tres" id="4_nu5ya"]
 [ext_resource type="Texture2D" uid="uid://drueiietytbph" path="res://Textures/icon-04.png" id="4_ttji4"]
+[ext_resource type="PackedScene" uid="uid://cxatoovfa7v4c" path="res://Dashboard/NewsCardDashboard.tscn" id="5_76e0c"]
 [ext_resource type="Texture2D" uid="uid://rvx750wh6wfx" path="res://Textures/icon-02.png" id="5_215cw"]
+[ext_resource type="PackedScene" uid="uid://ch7qema2p2mhn" path="res://Dashboard/ProjectCardSmall.tscn" id="5_g2ei7"]
 [ext_resource type="Texture2D" uid="uid://1kyilmw87l8v" path="res://Textures/icon-01.png" id="6_usm46"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nu5ya"]
@@ -293,6 +295,43 @@ theme_override_font_sizes/font_size = 80
 text = "News"
 horizontal_alignment = 1
 
+[node name="ScrollContainer" type="ScrollContainer" parent="Dash/Content/Bottom/News"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 120.0
+offset_right = 780.0
+offset_bottom = 420.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dash/Content/Bottom/News/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NewsCardDashboard" parent="Dash/Content/Bottom/News/ScrollContainer/HBoxContainer" instance=ExtResource("5_76e0c")]
+layout_mode = 2
+
+[node name="NewsCardDashboard2" parent="Dash/Content/Bottom/News/ScrollContainer/HBoxContainer" instance=ExtResource("5_76e0c")]
+layout_mode = 2
+
+[node name="NewsCardDashboard3" parent="Dash/Content/Bottom/News/ScrollContainer/HBoxContainer" instance=ExtResource("5_76e0c")]
+layout_mode = 2
+
+[node name="NewsCardDashboard4" parent="Dash/Content/Bottom/News/ScrollContainer/HBoxContainer" instance=ExtResource("5_76e0c")]
+layout_mode = 2
+
+[node name="NewsCardDashboard5" parent="Dash/Content/Bottom/News/ScrollContainer/HBoxContainer" instance=ExtResource("5_76e0c")]
+layout_mode = 2
+
+[node name="NewsCardDashboard6" parent="Dash/Content/Bottom/News/ScrollContainer/HBoxContainer" instance=ExtResource("5_76e0c")]
+layout_mode = 2
+
+[node name="NewsCardDashboard7" parent="Dash/Content/Bottom/News/ScrollContainer/HBoxContainer" instance=ExtResource("5_76e0c")]
+layout_mode = 2
+
+[node name="NewsCardDashboard8" parent="Dash/Content/Bottom/News/ScrollContainer/HBoxContainer" instance=ExtResource("5_76e0c")]
+layout_mode = 2
+
 [node name="Popular" type="Panel" parent="Dash/Content/Bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -306,6 +345,79 @@ theme_override_font_sizes/font_size = 80
 text = "Popular Projects"
 horizontal_alignment = 1
 
+[node name="Popular Projects" type="ScrollContainer" parent="Dash/Content/Bottom/Popular"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 120.0
+offset_right = 780.0
+offset_bottom = 370.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dash/Content/Bottom/Popular/Popular Projects"]
+layout_mode = 2
+
+[node name="ProjectCard" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard2" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard3" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard4" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard5" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard6" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard7" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard8" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard9" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard10" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard11" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard12" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard13" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard14" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard15" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard16" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard17" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard18" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard19" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
+[node name="ProjectCard20" parent="Dash/Content/Bottom/Popular/Popular Projects/HBoxContainer" instance=ExtResource("5_g2ei7")]
+layout_mode = 2
+
 [node name="Inspiration" type="Panel" parent="Dash/Content/Bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -316,7 +428,7 @@ layout_mode = 0
 offset_right = 790.0
 offset_bottom = 110.0
 theme_override_font_sizes/font_size = 80
-text = "Inspiration"
+text = "Your Links"
 horizontal_alignment = 1
 
 [node name="SideBar" type="VBoxContainer" parent="."]
