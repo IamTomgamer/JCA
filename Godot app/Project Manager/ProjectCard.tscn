@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl1hqggp7kh4g"]
+[gd_scene load_steps=5 format=3 uid="uid://dl1hqggp7kh4g"]
+
+[ext_resource type="Script" uid="uid://cxirr3uas8yv" path="res://Project Manager/project_card.gd" id="1_sqtab"]
+[ext_resource type="StyleBox" uid="uid://dv55t85kvr1wa" path="res://Invisible Button.tres" id="1_y5lpq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2h1f"]
 bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
@@ -8,6 +11,7 @@ bg_color = Color(0.17641926, 0.17641905, 0.17641908, 1)
 
 [node name="ProjectCard" type="VBoxContainer"]
 custom_minimum_size = Vector2(386, 500)
+script = ExtResource("1_sqtab")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 2
@@ -39,3 +43,15 @@ theme_override_font_sizes/font_size = 40
 text = "HeyHallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_right = 386.0
+offset_bottom = 500.0
+theme_override_styles/normal = ExtResource("1_y5lpq")
+theme_override_styles/pressed = ExtResource("1_y5lpq")
+theme_override_styles/hover = ExtResource("1_y5lpq")
+theme_override_styles/disabled = ExtResource("1_y5lpq")
+theme_override_styles/focus = ExtResource("1_y5lpq")
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

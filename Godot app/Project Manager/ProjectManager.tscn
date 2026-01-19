@@ -1,12 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://yr0es81b0to7"]
+[gd_scene load_steps=6 format=3 uid="uid://yr0es81b0to7"]
 
 [ext_resource type="Theme" uid="uid://beam52wlj5cua" path="res://themes/GB.tres" id="1_birbv"]
 [ext_resource type="Script" uid="uid://dekbi4yg2xja6" path="res://Project Manager/project_manager.gd" id="1_d74ew"]
-[ext_resource type="Texture2D" uid="uid://ci06vvudqpi7d" path="res://Textures/icon-03.png" id="1_umlal"]
-[ext_resource type="Texture2D" uid="uid://drueiietytbph" path="res://Textures/icon-04.png" id="2_qtwqf"]
-[ext_resource type="Texture2D" uid="uid://rvx750wh6wfx" path="res://Textures/icon-02.png" id="3_birbv"]
 [ext_resource type="PackedScene" uid="uid://dl1hqggp7kh4g" path="res://Project Manager/ProjectCard.tscn" id="3_d74ew"]
-[ext_resource type="Texture2D" uid="uid://1kyilmw87l8v" path="res://Textures/icon-01.png" id="4_qtwqf"]
+[ext_resource type="PackedScene" uid="uid://drl5bhon11gef" path="res://side_bar.tscn" id="4_qtwqf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vojdy"]
 bg_color = Color(0.99999315, 0.3902754, 0.56675214, 1)
@@ -14,12 +11,6 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umlal"]
-bg_color = Color(1, 0.9882353, 0.972549, 1)
-
-[sub_resource type="Theme" id="Theme_qtwqf"]
-Panel/styles/panel = SubResource("StyleBoxFlat_umlal")
 
 [node name="ProjectManager" type="Control"]
 layout_mode = 3
@@ -137,46 +128,9 @@ layout_mode = 2
 [node name="ProjectCard21" parent="Work/Workspace/Content/ScrollContainer/GridContainer" instance=ExtResource("3_d74ew")]
 layout_mode = 2
 
-[node name="SideBar" type="VBoxContainer" parent="."]
+[node name="SideBar" parent="." instance=ExtResource("4_qtwqf")]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 150.0
-offset_right = 135.0
-offset_bottom = 884.0
-
-[node name="Dashboard" type="TextureButton" parent="SideBar"]
-custom_minimum_size = Vector2(0, 170)
-layout_mode = 2
-texture_normal = ExtResource("1_umlal")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Projects" type="TextureButton" parent="SideBar"]
-custom_minimum_size = Vector2(0, 170)
-layout_mode = 2
-texture_normal = ExtResource("2_qtwqf")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Chat" type="TextureButton" parent="SideBar"]
-custom_minimum_size = Vector2(100, 170)
-layout_mode = 2
-texture_normal = ExtResource("3_birbv")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Panel" type="Panel" parent="SideBar"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-theme = SubResource("Theme_qtwqf")
-
-[node name="Settings" type="TextureButton" parent="SideBar"]
-custom_minimum_size = Vector2(0, 170)
-layout_mode = 2
-size_flags_vertical = 10
-texture_normal = ExtResource("4_qtwqf")
-ignore_texture_size = true
-stretch_mode = 4
-
-[connection signal="pressed" from="SideBar/Dashboard" to="." method="_on_dashboard_pressed"]
-[connection signal="pressed" from="SideBar/Projects" to="." method="_on_projects_pressed"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 110.0
+offset_bottom = 734.0

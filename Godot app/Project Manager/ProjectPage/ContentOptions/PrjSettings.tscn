@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5ioi7ir6334r"]
+
+[ext_resource type="Script" uid="uid://b4qlyrcanjbe3" path="res://Project Manager/ProjectPage/ContentOptions/prj_settings.gd" id="1_a04yf"]
+[ext_resource type="Texture2D" uid="uid://bmpenic6dt7dp" path="res://Textures/Untitled-2.png" id="1_t8a0f"]
+[ext_resource type="StyleBox" uid="uid://dv55t85kvr1wa" path="res://Invisible Button.tres" id="2_a04yf"]
+
+[sub_resource type="Theme" id="Theme_t8a0f"]
+PopupMenu/font_sizes/font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nro4p"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.043137256)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Gallery" type="VBoxContainer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 1735.0
+offset_bottom = 1255.0
+script = ExtResource("1_a04yf")
+
+[node name="Empty" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Settings" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Empty" type="VBoxContainer" parent="Settings"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Left" type="VBoxContainer" parent="Settings"]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+
+[node name="ProjectName" type="HBoxContainer" parent="Settings/Left"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="Project Name" type="LineEdit" parent="Settings/Left/ProjectName"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Project Name"
+
+[node name="PrjType" type="HBoxContainer" parent="Settings/Left"]
+layout_mode = 2
+
+[node name="PrjType" type="OptionButton" parent="Settings/Left/PrjType"]
+layout_mode = 2
+theme = SubResource("Theme_t8a0f")
+theme_override_font_sizes/font_size = 25
+item_count = 6
+popup/item_0/text = "Event"
+popup/item_0/id = 0
+popup/item_1/text = "Game"
+popup/item_1/id = 1
+popup/item_2/text = "Product"
+popup/item_2/id = 2
+popup/item_3/text = "Tech"
+popup/item_3/id = 3
+popup/item_4/text = "Design"
+popup/item_4/id = 4
+popup/item_5/text = "In-Game"
+popup/item_5/id = 5
+
+[node name="Thumbnail" type="HBoxContainer" parent="Settings/Left"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Settings/Left/Thumbnail"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+texture = ExtResource("1_t8a0f")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="Settings/Left/Thumbnail/TextureRect"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+theme_override_styles/normal = ExtResource("2_a04yf")
+theme_override_styles/pressed = ExtResource("2_a04yf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nro4p")
+theme_override_styles/disabled = ExtResource("2_a04yf")
+theme_override_styles/focus = ExtResource("2_a04yf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Left/Thumbnail"]
+layout_mode = 2
+
+[node name="Desc" type="HBoxContainer" parent="Settings/Left"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="Settings/Left/Desc"]
+custom_minimum_size = Vector2(855, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Description"
+
+[node name="Right" type="VBoxContainer" parent="Settings"]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+
+[node name="Budget" type="HBoxContainer" parent="Settings/Right"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="Settings/Right/Budget"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Do you need a Budget?"
+
+[node name="LineEdit" type="LineEdit" parent="Settings/Right/Budget"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "€"
+placeholder_text = "€"
+
+[connection signal="toggled" from="Settings/Right/Budget/CheckButton" to="." method="_on_check_button_toggled"]
