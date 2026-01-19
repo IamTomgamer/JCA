@@ -1,0 +1,160 @@
+[gd_scene load_steps=12 format=3 uid="uid://cjxvkyqnvm81h"]
+
+[ext_resource type="Script" uid="uid://dobpp8thtb1kr" path="res://Dashboard/dashboard.gd" id="1_vgcob"]
+[ext_resource type="Theme" uid="uid://beam52wlj5cua" path="res://themes/GB.tres" id="2_bq4r7"]
+[ext_resource type="PackedScene" uid="uid://dufqv84ac47ap" path="res://Top Bar.tscn" id="7_gncb8"]
+[ext_resource type="Texture2D" uid="uid://ci06vvudqpi7d" path="res://Textures/icon-03.png" id="7_j80u7"]
+[ext_resource type="Texture2D" uid="uid://drueiietytbph" path="res://Textures/icon-04.png" id="8_o1d76"]
+[ext_resource type="Texture2D" uid="uid://rvx750wh6wfx" path="res://Textures/icon-02.png" id="9_1p8ne"]
+[ext_resource type="Texture2D" uid="uid://1kyilmw87l8v" path="res://Textures/icon-01.png" id="10_qty3i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nu5ya"]
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_222gu"]
+bg_color = Color(1, 0.39215687, 0.5686275, 1)
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umlal"]
+bg_color = Color(1, 0.9882353, 0.972549, 1)
+
+[sub_resource type="Theme" id="Theme_qtwqf"]
+Panel/styles/panel = SubResource("StyleBoxFlat_umlal")
+
+[node name="Dashboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vgcob")
+metadata/_edit_vertical_guides_ = [-494.0]
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 2550.0
+offset_bottom = 1430.0
+theme = ExtResource("2_bq4r7")
+
+[node name="Dash" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 150.0
+offset_right = 2540.0
+offset_bottom = 1420.0
+theme_override_constants/separation = 5
+
+[node name="Content" type="HBoxContainer" parent="Dash"]
+custom_minimum_size = Vector2(0, 830)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Menu" type="Panel" parent="Dash/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nu5ya")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dash/Content/Menu"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 615.0
+offset_bottom = 1255.0
+
+[node name="ProjectName" type="Label" parent="Dash/Content/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Project Name"
+horizontal_alignment = 1
+
+[node name="Standard Buttons" type="VBoxContainer" parent="Dash/Content/Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Gallery" type="Button" parent="Dash/Content/Menu/VBoxContainer/Standard Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Gallery"
+
+[node name="Chat" type="Button" parent="Dash/Content/Menu/VBoxContainer/Standard Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Chat"
+
+[node name="Files" type="Button" parent="Dash/Content/Menu/VBoxContainer/Standard Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Files"
+
+[node name="PrjSettings" type="Button" parent="Dash/Content/Menu/VBoxContainer/Standard Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Project Settings"
+
+[node name="Gallery2" type="Button" parent="Dash/Content/Menu/VBoxContainer/Standard Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Documents"
+
+[node name="Content" type="Panel" parent="Dash/Content"]
+custom_minimum_size = Vector2(1750, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_222gu")
+
+[node name="SideBar" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 168.0
+offset_right = 135.0
+offset_bottom = 902.0
+
+[node name="Dashboard" type="TextureButton" parent="SideBar"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+texture_normal = ExtResource("7_j80u7")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Projects" type="TextureButton" parent="SideBar"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+texture_normal = ExtResource("8_o1d76")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Chat" type="TextureButton" parent="SideBar"]
+custom_minimum_size = Vector2(100, 170)
+layout_mode = 2
+texture_normal = ExtResource("9_1p8ne")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="SideBar"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme = SubResource("Theme_qtwqf")
+
+[node name="Settings" type="TextureButton" parent="SideBar"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+size_flags_vertical = 10
+texture_normal = ExtResource("10_qty3i")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Top Bar" parent="." instance=ExtResource("7_gncb8")]
+layout_mode = 0
+offset_top = 17.0
+offset_bottom = 127.0
+
+[connection signal="pressed" from="SideBar/Dashboard" to="." method="_on_dashboard_pressed"]
+[connection signal="pressed" from="SideBar/Projects" to="." method="_on_projects_pressed"]

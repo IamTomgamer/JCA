@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dufqv84ac47ap"]
+
+[node name="Top Bar" type="HBoxContainer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 2545.0
+offset_bottom = 125.0
